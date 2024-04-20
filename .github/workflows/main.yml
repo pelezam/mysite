@@ -11,7 +11,7 @@ jobs:
       - name: Github
       - uses: actions/checkout@v3
         run: |
-            source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
+          source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
 
       - name: deploy to server
       - uses: easingthemes/ssh-deploy@main
