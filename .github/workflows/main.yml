@@ -17,7 +17,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: {{ secrets.PORT }}
           SSH_PRIVATE_KEY: {{ secrets.SSHKEY }}
-          SCRIPT_BEOFE: |
+          run: |
             source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
 
       - name: Install dependencies
