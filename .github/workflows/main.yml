@@ -10,10 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy to server
-        runs: |
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: {{ secrets.PORT }}
+          key: {{ secrets.SSHKEY }}
+
+
+      - name: Install dependencies
+        run: |
           source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
           python -m pip install --upgrade pip
           pip install -r requements.txt
+
+      - name: Migration
+        run: |
           python manage.py makemigrations
           python manage.py migrate
          
