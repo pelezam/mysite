@@ -15,11 +15,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: {{ secrets.PORT }}
           key: {{ secrets.SSHKEY }}
-
+        run: |
+          source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
 
       - name: Install dependencies
         run: |
-          source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
           python -m pip install --upgrade pip
           pip install -r requements.txt
 
