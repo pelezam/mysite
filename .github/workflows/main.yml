@@ -23,9 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requements.txt
 
-
       - name: Migration
+      
         runs: |
-        python manage.py makemigrations
-        python manage.py migrate
+          python manage.py makemigrations
+          python manage.py migrate
          
