@@ -8,7 +8,12 @@ jobs:
   deploy:
     runs-on:  ubuntu-latest
     steps:
-      - name: get latest code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
         run: |
-          source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
+        source /home/wiinsboo/virtualenv/wagtail_demo/3.11/bin/activate && cd /home/wiinsboo/wagtail_demo
+        pip install -r requirements.txt
